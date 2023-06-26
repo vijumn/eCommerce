@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/bin/Debug
+/src/obj
+/src/Services/Catalog/Ryzen.Shop.Catalog.Api/bin/Debug/net7.0
+/src/Services/Catalog/Ryzen.Shop.Catalog.Api/obj
+/src/Services/Catalog/Ryzen.Shop.Catalog.Application/obj
+/src/Services/Catalog/Ryzen.Shop.Catalog.Domain/bin/Debug/net7.0
+/src/Services/Catalog/Ryzen.Shop.Catalog.Domain/obj
+/src/Services/Catalog/Ryzen.Shop.Catalog.Persistence/bin/Debug/net7.0
+/src/Services/Catalog/Ryzen.Shop.Catalog.Persistence/obj
+/src/Shared/Ryzen.Shop.Shared.Entity/bin/Debug/net7.0
+/src/Shared/Ryzen.Shop.Shared.Entity/obj
+/src/Services/Catalog/Ryzen.Shop.Catalog.Application/bin/Debug/net7.0

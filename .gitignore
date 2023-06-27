@@ -14,3 +14,7 @@
 /src/Shared/Ryzen.Shop.Shared.Entity/bin/Debug/net7.0
 /src/Shared/Ryzen.Shop.Shared.Entity/obj
 /src/Services/Catalog/Ryzen.Shop.Catalog.Application/bin/Debug/net7.0
+/src/Services/Trolley/Ryzen.Shop.Trolley.Api/bin/Debug/net7.0
+/src/Services/Trolley/Ryzen.Shop.Trolley.Api/obj
+/src/Services/Trolley/Tests/Ryzen.Shop.Trolley.Test/bin/Debug/net7.0
+/src/Services/Trolley/Tests/Ryzen.Shop.Trolley.Test/obj

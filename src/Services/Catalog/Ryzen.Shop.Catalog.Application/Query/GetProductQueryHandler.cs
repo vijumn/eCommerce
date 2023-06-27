@@ -1,0 +1,44 @@
+﻿using Domain.Products;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using Ryzen.Shop.Catalog.Application.Data;
+
+namespace Ryzen.Shop.Catalog.Application.Query;
+
+internal sealed class GetProductQueryHandler : IRequestHandler<GetProductQuery, ProductResponse>
+{
+    private readonly ICatalogContext _context;
+
+    public GetProductQueryHandler(ICatalogContext context)
+    {
+        _context = context;
+    }
+
+    public async Task<ProductResponse> Handle(GetProductQuery request, CancellationToken cancellationToken)
+    {
+        var product = await _context
+            .Products
+            .Where(p => p.ProductID==request.ProductId)
+            .Select(p => new ProductResponse(
+                p.ProductID,
+                p.Name,
+                p.Description,
+                p.Price,
+                p.PromotionID,
+                p.ProductPromotion.Type,
+                p.ProductPromotion.DiscountAmount,
+                p.ProductPromotion.DiscountPercentage,
+                p.ProductPromotion.MinimumSpendDiscountAmount,
+                p.ProductPromotion.GetOneFree,
+                p.ProductPromotion.SecondOneDiscountPercentage
+                ))
+            .FirstOrDefaultAsync(cancellationToken);
+
+        if (product is null)
+        {
+            throw new ProductNotFoundException(request.ProductId);
+        }
+
+        return product;
+    }
+}

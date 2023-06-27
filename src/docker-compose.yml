@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  ryzen.shop.catalog.api:
+    image: ${DOCKER_REGISTRY-}ryzenshopcatalogapi
+    build:
+      context: .
+      dockerfile: Services/Catalog/Ryzen.Shop.Catalog.Api/Dockerfile

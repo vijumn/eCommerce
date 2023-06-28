@@ -29,15 +29,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ryzen.Shop.Shared", "Shared
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{849BAD6E-8568-4DE2-80AF-87FE8534EF98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ryzen.Shop.Catalog.Test", "Services\Catalog\Ryzen.Shop.Catalog.Test\Ryzen.Shop.Catalog.Test.csproj", "{9938D787-92CA-4DA9-94E4-26DB34EE54E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ryzen.Shop.Catalog.Test", "Services\Catalog\Ryzen.Shop.Catalog.Test\Ryzen.Shop.Catalog.Test.csproj", "{9938D787-92CA-4DA9-94E4-26DB34EE54E4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Trolley", "Trolley", "{B7E4E71D-F6CA-4213-BB94-D537FD379049}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ryzen.Shop.Trolley.Api", "Services\Trolley\Ryzen.Shop.Trolley.Api\Ryzen.Shop.Trolley.Api.csproj", "{D0157DBD-BCDF-4027-A2AA-C529E59DF74C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ryzen.Shop.Trolley.Api", "Services\Trolley\Ryzen.Shop.Trolley.Api\Ryzen.Shop.Trolley.Api.csproj", "{D0157DBD-BCDF-4027-A2AA-C529E59DF74C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3079C665-952B-4476-B2D0-394F1001DE55}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ryzen.Shop.Trolley.Test", "Services\Trolley\Tests\Ryzen.Shop.Trolley.Test\Ryzen.Shop.Trolley.Test.csproj", "{44FD11AD-6B42-4BFD-BEDD-0D748E30E64D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ryzen.Shop.Infrastructure", "Shared\Ryzen.Shop.Infrastructure\Ryzen.Shop.Infrastructure.csproj", "{2F64A001-AE8F-4F76-A9CB-2E352FCE293C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{44FD11AD-6B42-4BFD-BEDD-0D748E30E64D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44FD11AD-6B42-4BFD-BEDD-0D748E30E64D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44FD11AD-6B42-4BFD-BEDD-0D748E30E64D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F64A001-AE8F-4F76-A9CB-2E352FCE293C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F64A001-AE8F-4F76-A9CB-2E352FCE293C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F64A001-AE8F-4F76-A9CB-2E352FCE293C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F64A001-AE8F-4F76-A9CB-2E352FCE293C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +107,7 @@ Global
 		{D0157DBD-BCDF-4027-A2AA-C529E59DF74C} = {B7E4E71D-F6CA-4213-BB94-D537FD379049}
 		{3079C665-952B-4476-B2D0-394F1001DE55} = {B7E4E71D-F6CA-4213-BB94-D537FD379049}
 		{44FD11AD-6B42-4BFD-BEDD-0D748E30E64D} = {3079C665-952B-4476-B2D0-394F1001DE55}
+		{2F64A001-AE8F-4F76-A9CB-2E352FCE293C} = {E07BDF4C-4921-4024-B683-A1EB67D50BDE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {939192C8-E328-4143-823B-200CB2D0F599}

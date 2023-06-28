@@ -1,6 +1,7 @@
 ﻿using Ryzen.Shop.Catalog.Application;
 
 using Ryzen.Shop.Catalog.Api.Extensions;
+using Ryzen.Shop.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContexts(builder.Configuration);
 builder.Services.AddApplication();
+builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
 
 var app = builder.Build();
 
@@ -25,6 +27,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthorization();
 
+
 app.MapControllers();
+
+app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+
 
 app.Run();

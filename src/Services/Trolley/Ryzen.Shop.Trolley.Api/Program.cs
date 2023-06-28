@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Polly;
+using Ryzen.Shop.Infrastructure;
 using Ryzen.Shop.Trolley.Api.Business;
 using Ryzen.Shop.Trolley.Api.Services;
 using Ryzen.Shop.Trolley.Api.Validators;
@@ -44,6 +45,7 @@ builder.Services.AddHttpClient("CatalogApi", client =>
 .AddTransientHttpErrorPolicy(
         p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
 
+builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
 
 builder.Services.AddApiVersioning(options =>
 {
@@ -64,5 +66,7 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
 
 app.Run();

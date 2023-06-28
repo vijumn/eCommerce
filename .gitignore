@@ -38,3 +38,5 @@
 /src/Services/Catalog/Ryzen.Shop.Catalog.Test/obj/Debug/net7.0/Ryzen.Shop.Catalog.Test.csproj.FileListAbsolute.txt
 /src/Services/Catalog/Ryzen.Shop.Catalog.Test/obj/Debug/net7.0/Ryzen.Shop.Catalog.Test.dll
 /src/Services/Catalog/Ryzen.Shop.Catalog.Test/obj/Debug/net7.0/Ryzen.Shop.Catalog.Test.pdb
+/src/Shared/Ryzen.Shop.Infrastructure/obj
+/src/Shared/Ryzen.Shop.Infrastructure/bin/Debug/net7.0

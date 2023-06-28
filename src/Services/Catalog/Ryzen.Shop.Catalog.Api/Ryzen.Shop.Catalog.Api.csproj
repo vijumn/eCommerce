@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Ryzen.Shop.Infrastructure\Ryzen.Shop.Infrastructure.csproj" />
     <ProjectReference Include="..\Ryzen.Shop.Catalog.Application\Ryzen.Shop.Catalog.Application.csproj" />
     <ProjectReference Include="..\Ryzen.Shop.Catalog.Persistence\Ryzen.Shop.Catalog.Persistence.csproj" />
   </ItemGroup>

@@ -37,6 +37,9 @@
               },
               "C:\\Git\\eCommerce\\src\\Services\\Catalog\\Ryzen.Shop.Catalog.Persistence\\Ryzen.Shop.Catalog.Persistence.csproj": {
                 "projectPath": "C:\\Git\\eCommerce\\src\\Services\\Catalog\\Ryzen.Shop.Catalog.Persistence\\Ryzen.Shop.Catalog.Persistence.csproj"
+              },
+              "C:\\Git\\eCommerce\\src\\Shared\\Ryzen.Shop.Infrastructure\\Ryzen.Shop.Infrastructure.csproj": {
+                "projectPath": "C:\\Git\\eCommerce\\src\\Shared\\Ryzen.Shop.Infrastructure\\Ryzen.Shop.Infrastructure.csproj"
               }
             }
           }
@@ -405,6 +408,78 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.4.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Git\\eCommerce\\src\\Shared\\Ryzen.Shop.Infrastructure\\Ryzen.Shop.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Git\\eCommerce\\src\\Shared\\Ryzen.Shop.Infrastructure\\Ryzen.Shop.Infrastructure.csproj",
+        "projectName": "Ryzen.Shop.Infrastructure",
+        "projectPath": "C:\\Git\\eCommerce\\src\\Shared\\Ryzen.Shop.Infrastructure\\Ryzen.Shop.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\vijum\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\eCommerce\\src\\Shared\\Ryzen.Shop.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vijum\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.1, )"
             }
           },
           "imports": [

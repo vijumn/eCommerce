@@ -29,7 +29,7 @@
                     else if (_percentageOff > 0)
                     {
                         decimal discount = product.UnitPrice * _percentageOff / 100;
-                        product.UnitPriceSale -= discount;
+                        product.UnitPriceSale = product.UnitPrice - discount;
                     }
                 }
             }

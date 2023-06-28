@@ -1,8 +1,28 @@
 version: '3.4'
 
 services:
+  catalog.db:
+    image: mcr.microsoft.com/mssql/server:2019-latest 
+    container_name: catalog-db
+    environment:
+        - MSSQL_SA_PASSWORD=Pass@word
+        - ACCEPT_EULA=Y
+     
+
+  trolleydata:
+    image: redis:alpine
+
   ryzen.shop.catalog.api:
     image: ${DOCKER_REGISTRY-}ryzenshopcatalogapi
+    container_name: catalog-api
     build:
       context: .
       dockerfile: Services/Catalog/Ryzen.Shop.Catalog.Api/Dockerfile
+
+  ryzen.shop.trolley.api:
+    image: ${DOCKER_REGISTRY-}ryzenshoptrolleyapi
+    container_name: trolley-api
+    build:
+      context: .
+      dockerfile: Services/Trolley/Ryzen.Shop.Trolley.Api/Dockerfile
+

@@ -3,12 +3,10 @@
     public class GetOneFree:IPromotion
     {
         public int _productId;
-        public int _quantity;
         
         public GetOneFree(dynamic data)
         {
             _productId = data.ProductId;
-            _quantity = data.Quantity;
         }
 
         public int Order { get; set; } = 200;

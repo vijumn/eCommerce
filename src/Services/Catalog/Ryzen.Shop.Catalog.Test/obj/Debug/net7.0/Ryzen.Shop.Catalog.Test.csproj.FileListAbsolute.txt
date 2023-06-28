@@ -163,3 +163,8 @@ C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\obj\Debug\net7.0\r
 C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\bin\Debug\net7.0\System.Net.Http.Formatting.dll
 C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\bin\Debug\net7.0\System.Web.Http.dll
 C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\bin\Debug\net7.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\bin\Debug\net7.0\Ryzen.Shop.Infrastructure.dll
+C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\bin\Debug\net7.0\Ryzen.Shop.Infrastructure.pdb

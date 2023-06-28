@@ -47,7 +47,7 @@ namespace Ryzen.Shop.Trolley.Api.Services
         public int? ProductId { get; set; }
         public string Name { get; set; }
         public decimal Amount { get; set; }
-        public int PromotionId { get; set; }
+        public int? PromotionId { get; set; }
         public PromotionType Type { get; set; }
         public decimal? DiscountAmount { get; set; }
         public decimal? DiscountPercentage { get; set; }

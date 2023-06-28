@@ -4,7 +4,10 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "ryzen.shop.catalog.api": "StartDebugging"
+        "ryzen.shop.catalog.api": "StartDebugging",
+        "ryzen.shop.trolley.api": "StartDebugging",
+        "catalog.db": "StartWithoutDebugging",
+        "trolleydata": "StartWithoutDebugging"
       }
     }
   }

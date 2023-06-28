@@ -5,4 +5,17 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "80"
+       - "5800:80"
+  ryzen.shop.trolley.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+       - "5801:80"
+  catalog.db:
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Pass@word
+    ports:
+      - "1433:1433"
+
+

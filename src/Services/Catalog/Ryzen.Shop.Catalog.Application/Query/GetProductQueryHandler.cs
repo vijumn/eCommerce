@@ -1,7 +1,7 @@
-﻿using Domain.Products;
-using MediatR;
+﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Ryzen.Shop.Catalog.Application.Data;
+using Ryzen.Shop.Catalog.Domain;
 
 namespace Ryzen.Shop.Catalog.Application.Query;
 
@@ -28,7 +28,7 @@ internal sealed class GetProductQueryHandler : IRequestHandler<GetProductQuery, 
                 p.ProductPromotion.Type,
                 p.ProductPromotion.DiscountAmount,
                 p.ProductPromotion.DiscountPercentage,
-                p.ProductPromotion.MinimumSpendDiscountAmount,
+                p.ProductPromotion.MinimumSpendAmount,
                 p.ProductPromotion.GetOneFree,
                 p.ProductPromotion.SecondOneDiscountPercentage
                 ))

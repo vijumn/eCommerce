@@ -1,20 +1,22 @@
 ﻿namespace Ryzen.Shop.Trolley.Api.Model
 {
-    public class TrolleyPromotion : IPromotion
+    public class MinimumSpend : IPromotion
     {
         private decimal _threshold;
         private decimal _amountOff;
 
-        public TrolleyPromotion(dynamic data)
+        public MinimumSpend(dynamic data)
         {
-            _threshold= data.MinimumSpendAmount;
-            _amountOff= data.MinimumSpendDiscountAmount;
+            _threshold= data.MinimumSpend??0.0m;
+            _amountOff= data.DiscountAmount??0.0m;
         }
+
+        public int Order { get ; set; } = int.MaxValue;
+
         public  void Apply(CustomerTrolley trolley)
         {
             if (trolley.Subtotal >= _threshold)
             {
-                trolley.Total -= _amountOff;
                 trolley.CartDiscount += _amountOff;
             }
         }

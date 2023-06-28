@@ -6,9 +6,9 @@ public class CustomerTrolley
 
     public List<TrolleyItem> Items { get; set; } = new();
 
-    public decimal Subtotal { get; set; }
+    public decimal Subtotal => Items.Select(x => (x.UnitPriceSale?? x.UnitPrice) * x.Quantity).Sum();
     public decimal CartDiscount { get; set; }
-    public decimal Total { get; set; }
+    public decimal Total => Subtotal - CartDiscount;
 
     public CustomerTrolley()
     {
@@ -19,5 +19,7 @@ public class CustomerTrolley
     {
         CustomerId = customerId;
     }
+
+    public int ItemsCount => Items.Select(x => x.Quantity).Sum();
 }
 

@@ -160,3 +160,6 @@ C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\obj\Debug\net7.0\r
 C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\obj\Debug\net7.0\Ryzen.Shop.Catalog.Test.pdb
 C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\obj\Debug\net7.0\Ryzen.Shop.Catalog.Test.genruntimeconfig.cache
 C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\obj\Debug\net7.0\ref\Ryzen.Shop.Catalog.Test.dll
+C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\bin\Debug\net7.0\System.Net.Http.Formatting.dll
+C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\bin\Debug\net7.0\System.Web.Http.dll
+C:\Git\eCommerce\src\Services\Catalog\Ryzen.Shop.Catalog.Test\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll

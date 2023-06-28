@@ -20,17 +20,17 @@ namespace Ryzen.Shop.Trolley.Test
         {
             dynamic itempromotion = new ExpandoObject();
             itempromotion.ProductId = 1;
-            itempromotion.AmountOff = 10m;
-            itempromotion.PercentageOff = 0.0m;
+            itempromotion.DiscountAmount = 10m;
+            itempromotion.DiscountPercentage = 0.0m;
             dynamic trolleyPromotion = new ExpandoObject();
             trolleyPromotion.ProductId = 1;
-            trolleyPromotion.MinimumSpendAmount = 10m;
-            trolleyPromotion.MinimumSpendDiscountAmount = 5.0m;
+            trolleyPromotion.MinimumSpend= 10m;
+            trolleyPromotion.DiscountAmount = 5.0m;
 
             var allData = new List<object[]>
             {   
-                new object[] { "ItemPromotion", typeof(ItemPromotion),itempromotion },
-                new object[] { "TrolleyPromotion", typeof(TrolleyPromotion),trolleyPromotion },
+                new object[] { "ItemDiscount", typeof(ItemDiscount),itempromotion },
+                new object[] { "MinimumSpend", typeof(MinimumSpend),trolleyPromotion },
             };
 
             return allData;

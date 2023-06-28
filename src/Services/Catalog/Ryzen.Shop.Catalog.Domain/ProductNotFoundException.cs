@@ -1,4 +1,4 @@
-﻿namespace Domain.Products;
+﻿namespace Ryzen.Shop.Catalog.Domain;
 
 public sealed class ProductNotFoundException : Exception
 {

@@ -50,13 +50,13 @@ public class CatalogContextSeed
         return new List<Promotion>()
         {
             new() { Type = PromotionType.GetOneFree, Name="GetOneFree" },
-            new() { Type =  PromotionType.DiscountAmount,Name="DiscountAmount", DiscountAmount=7.5m  },
-            new() { Type =  PromotionType.DiscountAmount,Name="DiscountAmount", DiscountAmount=13.60m  },
-            new() { Type =  PromotionType.DiscountAmount,Name="DiscountAmount", DiscountAmount=4.69m  },
-            new() { Type =  PromotionType.DiscountPercentage,Name="DiscountPercentage", DiscountAmount=.1m  },
-            new() { Type =  PromotionType.TrollyDiscountPercentage,Name="TrollyDiscountPercentage", DiscountAmount=.1m  },
+            new() { Type =  PromotionType.ItemDiscount,Name="ItemDiscount", DiscountAmount=7.5m  },
+            new() { Type =  PromotionType.ItemDiscount,Name="ItemDiscount", DiscountAmount=13.60m  },
+            new() { Type =  PromotionType.ItemDiscount,Name="ItemDiscount", DiscountAmount=4.69m  },
+            new() { Type =  PromotionType.ItemDiscount,Name="ItemDiscount", DiscountAmount=.1m  },
+            new() { Type =  PromotionType.TrollyDiscount,Name="TrollyDiscount", DiscountAmount=.1m  },
             new() { Type =  PromotionType.SecondOneDiscountPercentage,Name="SecondOneDiscountPercentage", DiscountAmount=.2m  },
-            new() { Type =  PromotionType.MinimumSpend,Name="MinimumSpend", MinimumSpendDiscountAmount=5m, MinimumSpendAmount=50m  },
+            new() { Type =  PromotionType.MinimumSpend,Name="MinimumSpend", DiscountAmount=5m, MinimumSpendAmount=50m  },
         };
     }
 

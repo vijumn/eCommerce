@@ -5,12 +5,11 @@ namespace Ryzen.Shop.Catalog.Domain
     public class PromotionType: Enumeration
     {
 
-        public static PromotionType DiscountAmount = new (1,nameof(DiscountAmount));
-        public static PromotionType DiscountPercentage = new (2,nameof(DiscountPercentage));
-        public static PromotionType MinimumSpend = new (3,nameof(MinimumSpend));
-        public static PromotionType GetOneFree = new (4,nameof(GetOneFree));
-        public static PromotionType SecondOneDiscountPercentage = new PromotionType(5, nameof(SecondOneDiscountPercentage));
-        public static PromotionType TrollyDiscountPercentage = new PromotionType(6, nameof(TrollyDiscountPercentage));
+        public static PromotionType ItemDiscount = new (1,nameof(ItemDiscount));
+        public static PromotionType MinimumSpend = new (2,nameof(MinimumSpend));
+        public static PromotionType GetOneFree = new (3,nameof(GetOneFree));
+        public static PromotionType SecondOneDiscountPercentage = new PromotionType(4, nameof(SecondOneDiscountPercentage));
+        public static PromotionType TrollyDiscount = new PromotionType(5, nameof(TrollyDiscount));
 
               public PromotionType(int id, string name)
             : base(id, name)

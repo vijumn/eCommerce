@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ryzen.Shop.Shared;
-
-namespace Ryzen.Shop.Catalog.Domain
+﻿namespace Ryzen.Shop.Catalog.Domain
 {
     public class Promotion
     {
@@ -14,7 +7,7 @@ namespace Ryzen.Shop.Catalog.Domain
         public PromotionType Type { get; set; }
         public decimal? DiscountAmount { get; set; }
         public decimal? DiscountPercentage { get; set; }
-        public decimal? MinimumSpendDiscountAmount { get; set; }
+        //public decimal? MinimumSpendDiscountAmount { get; set; } TODO:Remove
         public decimal? MinimumSpendAmount { get; set; }
 
         public bool? GetOneFree { get; set; }

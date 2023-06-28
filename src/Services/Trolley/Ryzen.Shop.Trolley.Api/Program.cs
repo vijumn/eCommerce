@@ -30,6 +30,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddRedis(builder.Configuration);
 builder.Services.AddScoped<ITrolleyService, TrolleyService>();
 builder.Services.AddScoped<IPromotionsService, PromotionsService>();
+builder.Services.AddScoped<IProductsService, ProductsService>();
 builder.Services.AddTransient<IDiscountEngine,DiscountEngine>();
 
 builder.Services.AddHttpClient("CatalogApi", client =>

@@ -70,7 +70,6 @@ namespace Ryzen.Shop.Trolley.Api.Controllers
 
                 ProductId = item.ProductId,
                 Quantity = item.Quantity,
-                UnitPrice = (decimal)item.UnitPrice,
             })); 
 
             return trolley;

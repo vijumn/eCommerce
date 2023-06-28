@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Ryzen.Shop.Catalog.Application.Query;
 using Ryzen.Shop.Catalog.Application.Data;
 
-namespace ARyzen.Shop.Catalog.Application.Query;
+namespace Ryzen.Shop.Catalog.Application.Query;
 
-internal sealed class GetAllroductsQueryHandler : IRequestHandler<GetAllProductsQuery, ProductResponse[]>
+internal sealed class GetAllroductsQueryHandler : IRequestHandler<GetAllProductsQuery, ProductDetailResponse[]>
 {
     private readonly ICatalogContext _context;
 
@@ -14,11 +14,11 @@ internal sealed class GetAllroductsQueryHandler : IRequestHandler<GetAllProducts
         _context = context;
     }
 
-    public async Task<ProductResponse[]> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
+    public async Task<ProductDetailResponse[]> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
     {
         var product = await _context
             .Products
-            .Select(p => new ProductResponse(
+            .Select(p => new ProductDetailResponse(
                 p.ProductID,
                 p.Name,
                 p.Description,

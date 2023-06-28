@@ -33,7 +33,7 @@ namespace Ryzen.Shop.Trolley.Api.Services
             }
             catch (HttpRequestException ex)
             {
-                _logger.LogError(ex, "Error while getting products");
+                _logger.LogError(ex, "Error while getting Promotions");
                 throw;
             }
 

@@ -7,5 +7,6 @@
         public decimal UnitPrice { get; set; }
         public decimal? UnitPriceSale { get; set; }
         public int Quantity { get; set; }
+        public string Description { get; set; }
     }
 }

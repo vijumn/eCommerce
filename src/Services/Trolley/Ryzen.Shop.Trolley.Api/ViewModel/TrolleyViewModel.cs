@@ -8,7 +8,6 @@
     public class TrolleyItemViewModel
     {
         public int ProductId { get; set; }
-        public decimal UnitPrice { get; set; } //TODO:Remove this
         public int Quantity { get; set; }
     }
 }

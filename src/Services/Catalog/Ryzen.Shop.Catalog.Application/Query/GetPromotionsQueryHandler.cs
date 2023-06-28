@@ -18,7 +18,7 @@ internal sealed class GetPromotionsQueryHander : IRequestHandler<GetPromotionsQu
     {
         var productPromotions = await _context
             .Products
-            .Where(p => request.ProductIds.Contains(p.ProductID))
+            .Where(p => request.ProductIds.Contains(p.ProductID) && p.PromotionID !=null )
             .Select(p => new PromotionResponse(
                 p.PromotionID,
                 p.Price,

@@ -3,9 +3,9 @@ using Ryzen.Shop.Catalog.Domain;
 
 namespace Ryzen.Shop.Catalog.Application.Query;
 
-public record GetProductQuery(int ProductId) : IRequest<ProductResponse>;
+public record GetProductQuery(int ProductId) : IRequest<ProductDetailResponse>;
 
-public record ProductResponse(
+public record ProductDetailResponse(
     int Id,
     string Name,
     string Description,

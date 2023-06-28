@@ -5,7 +5,7 @@ using Ryzen.Shop.Catalog.Domain;
 
 namespace Ryzen.Shop.Catalog.Application.Query;
 
-internal sealed class GetProductQueryHandler : IRequestHandler<GetProductQuery, ProductResponse>
+internal sealed class GetProductQueryHandler : IRequestHandler<GetProductQuery, ProductDetailResponse>
 {
     private readonly ICatalogContext _context;
 
@@ -14,12 +14,12 @@ internal sealed class GetProductQueryHandler : IRequestHandler<GetProductQuery, 
         _context = context;
     }
 
-    public async Task<ProductResponse> Handle(GetProductQuery request, CancellationToken cancellationToken)
+    public async Task<ProductDetailResponse> Handle(GetProductQuery request, CancellationToken cancellationToken)
     {
         var product = await _context
             .Products
             .Where(p => p.ProductID==request.ProductId)
-            .Select(p => new ProductResponse(
+            .Select(p => new ProductDetailResponse(
                 p.ProductID,
                 p.Name,
                 p.Description,

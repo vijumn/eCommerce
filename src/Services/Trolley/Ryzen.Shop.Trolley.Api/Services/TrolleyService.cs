@@ -1,6 +1,5 @@
-﻿using System.Net.Http;
-using Ryzen.Shop.Trolley.Api.Business;
-using Ryzen.Shop.Trolley.Api.Model;
+﻿using Ryzen.Shop.Trolley.Api.Business;
+using Ryzen.Shop.Trolley.Api.Exceptions;
 
 namespace Ryzen.Shop.Trolley.Api.Services
 {
@@ -37,12 +36,14 @@ namespace Ryzen.Shop.Trolley.Api.Services
               foreach(var item in customerTrolley.Items)
             {
                 var product = products.FirstOrDefault(x => x.Id == item.ProductId);
-                if(product != null)
+
+                if(product == null)
                 {
-                    item.ProductName = product.Name;
-                    item.Description = product.Description;
-                    item.UnitPrice = product.Amount;
+                   throw new ProductNotFoundException(item.ProductId);
                 }
+                item.ProductName = product.Name;
+                item.Description = product.Description;
+                item.UnitPrice = product.Amount;
             }
         }
 

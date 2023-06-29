@@ -24,10 +24,6 @@ namespace Ryzen.Shop.Infrastructure
             catch (Exception e)
             {
                 _logger.LogError(e, e.Message);
-
-                context.Response.StatusCode =
-                    (int)HttpStatusCode.InternalServerError;
-
                 ProblemDetails problem = new()
                 {
                     Status = (int)HttpStatusCode.InternalServerError,
@@ -35,6 +31,21 @@ namespace Ryzen.Shop.Infrastructure
                     Title = "Server Error",
                     Detail = "An internal server has occurred"
                 };
+
+                if (e is BaseException)
+                {
+                    context.Response.StatusCode =(int)HttpStatusCode.BadRequest;
+                    problem= new()
+                    {
+                        Status = (int)HttpStatusCode.BadRequest,
+                        Type = "Bad Request",
+                        Title = "Bad Request",
+                        Detail = e.Message
+                    };
+                }
+
+                context.Response.StatusCode =
+                    (int)HttpStatusCode.InternalServerError;
 
                 string json = JsonSerializer.Serialize(problem);
 

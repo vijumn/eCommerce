@@ -10,7 +10,7 @@ namespace Ryzen.Shop.Trolley.Test
         [MemberData(nameof(GetData))]
         public void CreatePromotion_ShouldReturnCorrectType(string promotionType, Type expectedType, dynamic data)
         {
-            var promotion = DiscountFactory.CreatePromotion(promotionType, data);
+            var promotion = new DiscountFactory().CreatePromotion(promotionType, data);
 
             Assert.NotNull(promotion);
             Assert.IsType(expectedType, promotion);

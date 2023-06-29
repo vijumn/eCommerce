@@ -11,7 +11,7 @@ namespace Ryzen.Shop.Trolley.Test
         public async Task ApplyDiscount_ShouldApplyPromotionsInOrder()
         {
             // Arrange
-            var discountEngine = new DiscountEngine();
+            var discountEngine = new DiscountEngine(new DiscountFactory());
             var promotions = new List<Promotion> {
             new Promotion { ProductId=1, DiscountAmount=2, Type=PromotionType.ItemDiscount  },
             new Promotion { ProductId=2, DiscountPercentage=2, Type=PromotionType.ItemDiscount  },
@@ -72,7 +72,7 @@ namespace Ryzen.Shop.Trolley.Test
         public async Task Should_Return_Trolley_With_Items_Count_Total()
         {
             // Arrange
-            var discountEngine = new DiscountEngine();
+            var discountEngine = new DiscountEngine(new DiscountFactory());
             var promotions = new List<Promotion>
             {
             };
@@ -99,7 +99,7 @@ namespace Ryzen.Shop.Trolley.Test
                 CartDiscount = 0.0m,
             };
 
-            DiscountFactory discountFactory = new DiscountFactory();
+            
 
             // Act
             var result = await discountEngine.ApplyDiscount(promotions, customerTrolley);
@@ -124,7 +124,7 @@ namespace Ryzen.Shop.Trolley.Test
         public async Task Should_Return_Trolley_With_Items_Name_SalePrice()
         {
             // Arrange
-            var discountEngine = new DiscountEngine();
+            var discountEngine = new DiscountEngine(new DiscountFactory());
             var promotions = new List<Promotion>
             {
             };
@@ -147,7 +147,7 @@ namespace Ryzen.Shop.Trolley.Test
                 CartDiscount = 0.0m,
             };
 
-            DiscountFactory discountFactory = new DiscountFactory();
+            
             // Act
             var result = await discountEngine.ApplyDiscount(promotions, customerTrolley);
 
@@ -172,7 +172,7 @@ namespace Ryzen.Shop.Trolley.Test
         public async Task Should_Return_Trolley_With_TotalPrice()
         {
             // Arrange
-            var discountEngine = new DiscountEngine();
+            var discountEngine = new DiscountEngine(new DiscountFactory());
             var promotions = new List<Promotion>
             {
             };
@@ -228,7 +228,7 @@ namespace Ryzen.Shop.Trolley.Test
         public async Task Should_Return_Trolley_With_Items_SalePrice_DiscountedPrice()
         {
             // Arrange
-            var discountEngine = new DiscountEngine();
+            var discountEngine = new DiscountEngine(new DiscountFactory());
             var promotions = new List<Promotion>
             {
                  new Promotion { ProductId=1, DiscountAmount=2, Type=PromotionType.ItemDiscount  },
@@ -255,7 +255,7 @@ namespace Ryzen.Shop.Trolley.Test
                 CartDiscount = 0.0m,
             };
 
-            DiscountFactory discountFactory = new DiscountFactory();
+            
             // Act
             var result = await discountEngine.ApplyDiscount(promotions, customerTrolley);
 
@@ -282,7 +282,7 @@ namespace Ryzen.Shop.Trolley.Test
         public async Task Should_Return_Trolley_With_TotalPrice_DiscountedPrice()
         {
             // Arrange
-            var discountEngine = new DiscountEngine();
+            var discountEngine = new DiscountEngine(new DiscountFactory());
             var promotions = new List<Promotion>
             {
                  new Promotion { ProductId=1, DiscountAmount=2m, Type=PromotionType.ItemDiscount  },
@@ -309,7 +309,7 @@ namespace Ryzen.Shop.Trolley.Test
                 CartDiscount = 0.0m,
             };
 
-            DiscountFactory discountFactory = new DiscountFactory();
+        
             // Act
             var result = await discountEngine.ApplyDiscount(promotions, customerTrolley);
 
@@ -335,7 +335,7 @@ namespace Ryzen.Shop.Trolley.Test
         public async Task Should_Return_Trolley_With_TotalPrice_DiscountedPrice_With_DifferentQuantity()
         {
             // Arrange
-            var discountEngine = new DiscountEngine();
+            var discountEngine = new DiscountEngine(new DiscountFactory());
             var promotions = new List<Promotion>
             {
                  new Promotion { ProductId=1, DiscountAmount=2m, Type=PromotionType.ItemDiscount  },
@@ -362,7 +362,7 @@ namespace Ryzen.Shop.Trolley.Test
                 CartDiscount = 0.0m,
             };
 
-            DiscountFactory discountFactory = new DiscountFactory();
+            
             // Act
             var result = await discountEngine.ApplyDiscount(promotions, customerTrolley);
 
@@ -392,7 +392,7 @@ namespace Ryzen.Shop.Trolley.Test
         public async Task Should_Return_Trolley_With_TotalPrice_DiscountedPrice_With_Final_Test_Data()
         {
             // Arrange
-            var discountEngine = new DiscountEngine();
+            var discountEngine = new DiscountEngine(new DiscountFactory());
             var promotions = new List<Promotion>
             {
                  new Promotion { ProductId=1, DiscountAmount=2m, Type=PromotionType.ItemDiscount  },
@@ -424,7 +424,7 @@ namespace Ryzen.Shop.Trolley.Test
                 CartDiscount = 5.0m,
             };
 
-            DiscountFactory discountFactory = new DiscountFactory();
+            
             // Act
             var result = await discountEngine.ApplyDiscount(promotions, customerTrolley);
 
@@ -444,7 +444,7 @@ namespace Ryzen.Shop.Trolley.Test
         public async Task Should_Return_Trolley_With_TotalPrice_DiscountedPrice_With_Final_Test_Data_DifferentQuantity()
         {
             // Arrange
-            var discountEngine = new DiscountEngine();
+            var discountEngine = new DiscountEngine(new DiscountFactory());
             var promotions = new List<Promotion>
             {
                  new Promotion { ProductId=1, DiscountAmount=2m, Type=PromotionType.ItemDiscount  },
@@ -477,7 +477,7 @@ namespace Ryzen.Shop.Trolley.Test
                 CartDiscount = 5.0m,
             };
 
-            DiscountFactory discountFactory = new DiscountFactory();
+            
             // Act
             var result = await discountEngine.ApplyDiscount(promotions, customerTrolley);
 

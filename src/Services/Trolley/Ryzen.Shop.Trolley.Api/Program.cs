@@ -32,6 +32,7 @@ builder.Services.AddScoped<ITrolleyService, TrolleyService>();
 builder.Services.AddScoped<IPromotionsService, PromotionsService>();
 builder.Services.AddScoped<IProductsService, ProductsService>();
 builder.Services.AddTransient<IDiscountEngine,DiscountEngine>();
+builder.Services.AddSingleton<IDiscountFactory,DiscountFactory>();
 
 builder.Services.AddHttpClient("CatalogApi", client =>
 {

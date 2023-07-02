@@ -15,6 +15,12 @@ builder.Services.AddDbContexts(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
 
+builder.Services.AddApiVersioning(options =>
+{
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.ReportApiVersions = false;
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -5,10 +5,12 @@ namespace Ryzen.Shop.Trolley.Api.Business
     public class DiscountEngine : IDiscountEngine
     {
         private readonly IList<IPromotion> _promotions;
+        private readonly IDiscountFactory _discountFactory;
 
-        public DiscountEngine()
+        public DiscountEngine(IDiscountFactory discountFactory)
         {
             _promotions = new List<IPromotion>();
+            _discountFactory = discountFactory;
         }
 
         public async Task ApplyDiscount(List<Promotion> promotions, CustomerTrolley customerTrolley)
@@ -16,7 +18,7 @@ namespace Ryzen.Shop.Trolley.Api.Business
 
             foreach (var data in promotions)
             {
-                var promotion = DiscountFactory.CreatePromotion(data.Type.Name, data);
+                var promotion = _discountFactory.CreatePromotion(data.Type.Name, data);
 
                 if (promotion != null)
                 {

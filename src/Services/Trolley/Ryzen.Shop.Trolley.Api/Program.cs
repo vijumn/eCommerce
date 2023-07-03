@@ -35,6 +35,9 @@ builder.Services.AddScoped<IProductsService, ProductsService>();
 builder.Services.AddTransient<IDiscountEngine,DiscountEngine>();
 builder.Services.AddTransient<ITrolleyRepository, RedisTrolleyRepository>();
 
+builder.Services.AddSingleton<IDiscountFactory,DiscountFactory>();
+
+
 builder.Services.AddHttpClient("CatalogApi", client =>
 {
     string basAddress = builder.Configuration.GetValue<string>("CatalogUrl");

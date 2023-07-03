@@ -1,6 +1,6 @@
 ﻿namespace Ryzen.Shop.Trolley.Api.Model;
 
-public class CustomerTrolley
+public class Trolley
 {
     public string CustomerId { get; set; }
 
@@ -10,12 +10,12 @@ public class CustomerTrolley
     public decimal CartDiscount { get; set; }
     public decimal Total => Subtotal - CartDiscount;
 
-    public CustomerTrolley()
+    public Trolley()
     {
 
     }
 
-    public CustomerTrolley(string customerId)
+    public Trolley(string customerId)
     {
         CustomerId = customerId;
     }

@@ -18,24 +18,24 @@ namespace Ryzen.Shop.Trolley.Api.Services
             _trolleyRepository = trolleyRepository;
         }
 
-        public async Task<CustomerTrolley> GetTrolley(string trolleyId)
+        public async Task<Model.Trolley> GetTrolley(string trolleyId)
         {
             return await _trolleyRepository.GetTrolleyAsync(trolleyId);
         }
-        public async Task<CustomerTrolley> UpdateTrolley(string trolleyId,CustomerTrolley customerTrolley)
+        public async Task<Model.Trolley> UpdateTrolley(string trolleyId, Model.Trolley customerTrolley)
         {
             var ids = customerTrolley.Items.Select(x => x.ProductId).ToList();
             var promotions =await _promotionsService.GetPromotions(ids);
             var products = await _productsService.GetProducts(ids);
             EnrichTrolley(customerTrolley, products);
-            await _discountEngine.ApplyDiscount(promotions, customerTrolley);
+            var trolley = await _discountEngine.ApplyDiscount(promotions, customerTrolley);
 
             await _trolleyRepository.UpdateTrolleyAsync(customerTrolley);
 
             return customerTrolley;
 
         }
-        private void EnrichTrolley(CustomerTrolley customerTrolley, List<Product> products)
+        private void EnrichTrolley(Model.Trolley customerTrolley, List<Product> products)
         {
               foreach(var item in customerTrolley.Items)
             {

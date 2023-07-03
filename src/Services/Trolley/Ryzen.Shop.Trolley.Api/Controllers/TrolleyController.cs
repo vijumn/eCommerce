@@ -54,10 +54,10 @@ namespace Ryzen.Shop.Trolley.Api.Controllers
 
 
         #region Private Methods
-        private CustomerTrolley MapToTrolley(string customerId, TrolleyViewModel customerTrolley)
+        private Model.Trolley MapToTrolley(string customerId, TrolleyViewModel customerTrolley)
         {
            
-            var trolley = new CustomerTrolley
+            var trolley = new Model.Trolley
             {
                 CustomerId = customerId
             };

@@ -4,8 +4,8 @@ namespace Ryzen.Shop.Trolley.Api.Model;
 
 public interface ITrolleyRepository
 {
-    Task<CustomerTrolley> GetTrolleyAsync(string customerId);
-    Task<CustomerTrolley> UpdateTrolleyAsync(CustomerTrolley basket);
+    Task<Trolley> GetTrolleyAsync(string customerId);
+    Task<Trolley> UpdateTrolleyAsync(Trolley basket);
     Task<bool> DeleteTrolleyAsync(string id);
 
     IEnumerable<string> GetUsers();

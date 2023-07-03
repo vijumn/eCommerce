@@ -4,6 +4,6 @@ namespace Ryzen.Shop.Trolley.Api.Business
 {
     public interface IDiscountEngine
     {
-        Task ApplyDiscount(List<Promotion> promotions, CustomerTrolley customerTrolley);
+        Task<Model.Trolley> ApplyDiscount(List<Promotion> promotions, Model.Trolley customerTrolley);
     }
 }

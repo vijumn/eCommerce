@@ -9,7 +9,8 @@ services:
         - ACCEPT_EULA=Y
      
 
-  trolleydata:
+  trolley.db:
+    container_name: troley-db
     image: redis:alpine
 
   ryzen.shop.catalog.api:

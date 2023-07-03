@@ -4,7 +4,8 @@ using Ryzen.Shop.Catalog.Application.Query;
 
 namespace Ryzen.Shop.Catalog.Api.Controllers
 {
-    [Route("api/v1/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {

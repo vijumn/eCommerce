@@ -13,6 +13,7 @@ using Ryzen.Shop.Trolley.Api.Business;
 using Ryzen.Shop.Trolley.Api.Services;
 using Ryzen.Shop.Trolley.Api.Validators;
 using Ryzen.Shop.Trolley.Api.ViewModel;
+using Ryzen.Shop.Trolley.API.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +33,7 @@ builder.Services.AddScoped<ITrolleyService, TrolleyService>();
 builder.Services.AddScoped<IPromotionsService, PromotionsService>();
 builder.Services.AddScoped<IProductsService, ProductsService>();
 builder.Services.AddTransient<IDiscountEngine,DiscountEngine>();
+builder.Services.AddTransient<ITrolleyRepository, RedisTrolleyRepository>();
 
 builder.Services.AddHttpClient("CatalogApi", client =>
 {

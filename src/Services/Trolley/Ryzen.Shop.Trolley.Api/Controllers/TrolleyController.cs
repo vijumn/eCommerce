@@ -25,29 +25,30 @@ namespace Ryzen.Shop.Trolley.Api.Controllers
             _validator = validator;
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Get(string customerId)
+        public async Task<IActionResult> Get(string id)
         {
-            var trolley = await _trolleyService.GetTrolley(customerId); 
+            var trolley = await _trolleyService.GetTrolley(id); 
             if(trolley == null)
             {
                 return NotFound();
             }
-            return Ok();
+            return Ok(trolley);
         }
-        [HttpPut]
+
+        [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Update(string customerId, TrolleyViewModel customerTrolley)
+        public async Task<IActionResult> Update(string id, TrolleyViewModel customerTrolley)
         {
             var result =  await _validator.ValidateAsync(customerTrolley);
             if (!result.IsValid)
             {
                 return BadRequest(result.Errors);
             }
-            var trolley = await _trolleyService.UpdateTrolley(customerId, MapToTrolley(customerId,customerTrolley));
+            var trolley = await _trolleyService.UpdateTrolley(id, MapToTrolley(id, customerTrolley));
             return Ok(trolley);
         }
 
@@ -55,11 +56,7 @@ namespace Ryzen.Shop.Trolley.Api.Controllers
         #region Private Methods
         private CustomerTrolley MapToTrolley(string customerId, TrolleyViewModel customerTrolley)
         {
-            if (customerTrolley == null)
-            {
-                return null;
-            }
-
+           
             var trolley = new CustomerTrolley
             {
                 CustomerId = customerId

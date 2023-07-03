@@ -1,5 +1,6 @@
 ﻿using Ryzen.Shop.Trolley.Api.Business;
 using Ryzen.Shop.Trolley.Api.Exceptions;
+using Ryzen.Shop.Trolley.Api.Model;
 
 namespace Ryzen.Shop.Trolley.Api.Services
 {
@@ -8,17 +9,18 @@ namespace Ryzen.Shop.Trolley.Api.Services
         private readonly IPromotionsService _promotionsService;
         private readonly IDiscountEngine _discountEngine;
         private readonly IProductsService _productsService;
-        public TrolleyService(IPromotionsService promotionsService, IDiscountEngine discountEngine, IProductsService productsService)
+        private readonly ITrolleyRepository _trolleyRepository;
+        public TrolleyService(IPromotionsService promotionsService, IDiscountEngine discountEngine, IProductsService productsService, ITrolleyRepository trolleyRepository)
         {
             _promotionsService = promotionsService;
             _discountEngine = discountEngine;
             _productsService = productsService;
-
+            _trolleyRepository = trolleyRepository;
         }
 
         public async Task<CustomerTrolley> GetTrolley(string trolleyId)
         {
-            return new CustomerTrolley();
+            return await _trolleyRepository.GetTrolleyAsync(trolleyId);
         }
         public async Task<CustomerTrolley> UpdateTrolley(string trolleyId,CustomerTrolley customerTrolley)
         {
@@ -26,7 +28,9 @@ namespace Ryzen.Shop.Trolley.Api.Services
             var promotions =await _promotionsService.GetPromotions(ids);
             var products = await _productsService.GetProducts(ids);
             EnrichTrolley(customerTrolley, products);
-            var trolley = await _discountEngine.ApplyDiscount(promotions, customerTrolley);
+            await _discountEngine.ApplyDiscount(promotions, customerTrolley);
+
+            await _trolleyRepository.UpdateTrolleyAsync(customerTrolley);
 
             return customerTrolley;
 

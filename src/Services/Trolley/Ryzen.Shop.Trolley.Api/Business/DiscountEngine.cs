@@ -11,7 +11,7 @@ namespace Ryzen.Shop.Trolley.Api.Business
             _promotions = new List<IPromotion>();
         }
 
-        public async Task<CustomerTrolley> ApplyDiscount(List<Promotion> promotions, CustomerTrolley customerTrolley)
+        public async Task ApplyDiscount(List<Promotion> promotions, CustomerTrolley customerTrolley)
         {
 
             foreach (var data in promotions)
@@ -28,7 +28,7 @@ namespace Ryzen.Shop.Trolley.Api.Business
             {
                 promotion.Apply(customerTrolley);
             }
-            return customerTrolley;
+            return;
         }
 
 

@@ -17,7 +17,7 @@ namespace Ryzen.Shop.Trolley.Test
             new Promotion { ProductId=2, DiscountPercentage=2, Type=PromotionType.ItemDiscount  },
             new Promotion {  DiscountAmount=10,MinimumSpend=50,  Type=PromotionType.MinimumSpend  },
         };
-            var customerTrolley = new CustomerTrolley
+            var customerTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -28,7 +28,7 @@ namespace Ryzen.Shop.Trolley.Test
                   }
             };
 
-            var resultTrolley = new CustomerTrolley
+            var resultTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -76,7 +76,7 @@ namespace Ryzen.Shop.Trolley.Test
             var promotions = new List<Promotion>
             {
             };
-            var customerTrolley = new CustomerTrolley
+            var customerTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -87,7 +87,7 @@ namespace Ryzen.Shop.Trolley.Test
                   }
             };
 
-            var resultTrolley = new CustomerTrolley
+            var resultTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -128,7 +128,7 @@ namespace Ryzen.Shop.Trolley.Test
             var promotions = new List<Promotion>
             {
             };
-            var customerTrolley = new CustomerTrolley
+            var customerTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -137,7 +137,7 @@ namespace Ryzen.Shop.Trolley.Test
                   }
             };
 
-            var resultTrolley = new CustomerTrolley
+            var resultTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -176,7 +176,7 @@ namespace Ryzen.Shop.Trolley.Test
             var promotions = new List<Promotion>
             {
             };
-            var customerTrolley = new CustomerTrolley
+            var customerTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -187,7 +187,7 @@ namespace Ryzen.Shop.Trolley.Test
                   }
             };
 
-            var resultTrolley = new CustomerTrolley
+            var resultTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -234,7 +234,7 @@ namespace Ryzen.Shop.Trolley.Test
                  new Promotion { ProductId=1, DiscountAmount=2, Type=PromotionType.ItemDiscount  },
                  new Promotion { ProductId=2, DiscountPercentage=10m, Type=PromotionType.ItemDiscount  },
             };
-            var customerTrolley = new CustomerTrolley
+            var customerTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -244,7 +244,7 @@ namespace Ryzen.Shop.Trolley.Test
                   }
             };
 
-            var resultTrolley = new CustomerTrolley
+            var resultTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -288,7 +288,7 @@ namespace Ryzen.Shop.Trolley.Test
                  new Promotion { ProductId=1, DiscountAmount=2m, Type=PromotionType.ItemDiscount  },
                  new Promotion { ProductId=2, DiscountPercentage=20m, Type=PromotionType.SecondOneDiscountPercentage  },
             };
-            var customerTrolley = new CustomerTrolley
+            var customerTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -298,7 +298,7 @@ namespace Ryzen.Shop.Trolley.Test
                   }
             };
 
-            var resultTrolley = new CustomerTrolley
+            var resultTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -341,7 +341,7 @@ namespace Ryzen.Shop.Trolley.Test
                  new Promotion { ProductId=1, DiscountAmount=2m, Type=PromotionType.ItemDiscount  },
                  new Promotion { ProductId=2, DiscountPercentage=20m, Type=PromotionType.SecondOneDiscountPercentage  },
             };
-            var customerTrolley = new CustomerTrolley
+            var customerTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -351,7 +351,7 @@ namespace Ryzen.Shop.Trolley.Test
                   }
             };
 
-            var resultTrolley = new CustomerTrolley
+            var resultTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -399,7 +399,7 @@ namespace Ryzen.Shop.Trolley.Test
                  new Promotion { ProductId=3, GetOneFree=true , Type=PromotionType.GetOneFree  },
                  new Promotion {  DiscountAmount=5m, Type=PromotionType.MinimumSpend  },
             };
-            var customerTrolley = new CustomerTrolley
+            var customerTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -411,7 +411,7 @@ namespace Ryzen.Shop.Trolley.Test
                   }
             };
 
-            var resultTrolley = new CustomerTrolley
+            var resultTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -452,7 +452,7 @@ namespace Ryzen.Shop.Trolley.Test
                  new Promotion { ProductId=3, DiscountPercentage=100m , Type=PromotionType.SecondOneDiscountPercentage  },
                  new Promotion {  DiscountAmount=5m, Type=PromotionType.MinimumSpend  },
             };
-            var customerTrolley = new CustomerTrolley
+            var customerTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>
@@ -464,7 +464,7 @@ namespace Ryzen.Shop.Trolley.Test
                   }
             };
 
-            var resultTrolley = new CustomerTrolley
+            var resultTrolley = new Api.Model.Trolley
             {
                 CustomerId = "1",
                 Items = new List<TrolleyItem>

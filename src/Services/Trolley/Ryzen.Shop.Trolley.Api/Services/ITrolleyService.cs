@@ -2,7 +2,7 @@
 {
     public interface ITrolleyService
     {
-        Task<CustomerTrolley> GetTrolley(string customerId);
-        Task<CustomerTrolley> UpdateTrolley(string trolleyId, CustomerTrolley customerTrolley);
+        Task<Model.Trolley> GetTrolley(string customerId);
+        Task<Model.Trolley> UpdateTrolley(string trolleyId, Model.Trolley customerTrolley);
     }
 }

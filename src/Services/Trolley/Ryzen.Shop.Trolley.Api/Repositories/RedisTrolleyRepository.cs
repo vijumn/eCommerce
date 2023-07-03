@@ -27,7 +27,7 @@ public class RedisTrolleyRepository : ITrolleyRepository
         return data?.Select(k => k.ToString());
     }
 
-    public async Task<CustomerTrolley> GetTrolleyAsync(string customerId)
+    public async Task<Api.Model.Trolley> GetTrolleyAsync(string customerId)
     {
         var data = await _database.StringGetAsync(customerId);
 
@@ -36,14 +36,14 @@ public class RedisTrolleyRepository : ITrolleyRepository
             return null;
         }
 
-        return JsonSerializer.Deserialize<CustomerTrolley>(data,
+        return JsonSerializer.Deserialize<Api.Model.Trolley>(data,
             new JsonSerializerOptions()
             {
                 PropertyNameCaseInsensitive = true
             });
     }
 
-    public async Task<CustomerTrolley> UpdateTrolleyAsync(CustomerTrolley trolley)
+    public async Task<Api.Model.Trolley> UpdateTrolleyAsync(Api.Model.Trolley trolley)
     {
         var created = await _database.StringSetAsync(trolley.CustomerId, 
             JsonSerializer.Serialize(trolley, new JsonSerializerOptions()

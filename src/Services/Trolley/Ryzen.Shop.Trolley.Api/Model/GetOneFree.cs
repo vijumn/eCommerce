@@ -10,7 +10,7 @@
         }
 
         public int Order { get; set; } = 200;
-        public void Apply(CustomerTrolley trolley)
+        public void Apply(Trolley trolley)
         {
             foreach (var product in trolley.Items)
             {

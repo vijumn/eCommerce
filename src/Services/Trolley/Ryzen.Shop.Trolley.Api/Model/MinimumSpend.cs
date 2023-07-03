@@ -13,7 +13,7 @@
 
         public int Order { get ; set; } = int.MaxValue;
 
-        public  void Apply(CustomerTrolley trolley)
+        public  void Apply(Trolley trolley)
         {
             if (trolley.Subtotal >= _threshold)
             {

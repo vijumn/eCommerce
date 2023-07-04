@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Reflection;
+using Ryzen.Shop.Infrastructure.MessageBroker;
+using MassTransit;
 
 namespace Ryzen.Shop.Trolley.Api.Extensions;
 public static class Extensions
@@ -19,5 +22,39 @@ public static class Extensions
 
             return ConnectionMultiplexer.Connect(redisConfig);
         });
+    }
+    public static IServiceCollection AddMessaging(this IServiceCollection services)
+    {
+        services.AddMassTransit(x =>
+        {
+            x.AddDelayedMessageScheduler();
+
+            x.SetKebabCaseEndpointNameFormatter();
+
+            // By default, sagas are in-memory, but should be changed to a durable
+            // saga repository.
+            x.SetInMemorySagaRepositoryProvider();
+
+            var entryAssembly = Assembly.GetEntryAssembly();
+
+            x.AddConsumers(entryAssembly);
+            x.AddSagaStateMachines(entryAssembly);
+            x.AddSagas(entryAssembly);
+            x.AddActivities(entryAssembly);
+
+            x.UsingRabbitMq((context, cfg) =>
+            {
+                cfg.Host("eshop-mq", "/", h => {
+                    h.Username("guest");
+                    h.Password("guest");
+                });
+
+                cfg.UseDelayedMessageScheduler();
+
+                cfg.ConfigureEndpoints(context);
+            });
+        });
+        services.AddTransient<IEventBus, EventBus>();
+        return services;
     }
 }

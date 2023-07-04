@@ -6,6 +6,7 @@ using Ryzen.Shop.Trolley.Api.Model;
 using Ryzen.Shop.Trolley.Api.Services;
 using Ryzen.Shop.Trolley.Api.ViewModel;
 using Ryzen.Shop.Trolley.Api.Validators;
+using System.Security.Claims;
 
 namespace Ryzen.Shop.Trolley.Api.Controllers
 {
@@ -51,6 +52,33 @@ namespace Ryzen.Shop.Trolley.Api.Controllers
             var trolley = await _trolleyService.UpdateTrolley(id, MapToTrolley(id, customerTrolley));
             return Ok(trolley);
         }
+
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task DeleteTrolley(string id)
+        {
+            await _trolleyService.DeleteTrolley(id);
+        }
+
+        [Route("checkout")]
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> CheckoutAsync([FromBody] string customerId)
+        {
+
+
+            var trolley = await _trolleyService.GetTrolley(customerId);
+            if(trolley == null)
+            {
+                return BadRequest();
+            }
+
+
+            return Accepted();
+        }
+
+       
 
 
         #region Private Methods

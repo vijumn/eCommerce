@@ -2,6 +2,7 @@
 {
     public class TrolleyViewModel
     {
+            public string CustomerId { get; set; }
             public List<TrolleyItemViewModel> Items { get; set; } = new();
     }
 

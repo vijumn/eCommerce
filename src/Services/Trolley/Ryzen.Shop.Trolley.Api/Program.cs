@@ -59,6 +59,7 @@ builder.Services.AddApiVersioning(options =>
     options.DefaultApiVersion = new ApiVersion(1, 0);
     options.ReportApiVersions = false;
 });
+builder.Services.AddMessaging();
 
 var app = builder.Build();
 

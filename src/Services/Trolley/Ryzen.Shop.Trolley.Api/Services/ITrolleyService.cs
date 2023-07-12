@@ -4,5 +4,8 @@
     {
         Task<Model.Trolley> GetTrolley(string customerId);
         Task<Model.Trolley> UpdateTrolley(string trolleyId, Model.Trolley customerTrolley);
+
+        Task DeleteTrolley(string trolleyId);
+        
     }
 }

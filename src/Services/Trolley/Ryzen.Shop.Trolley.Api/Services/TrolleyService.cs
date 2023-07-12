@@ -1,4 +1,6 @@
-﻿using Ryzen.Shop.Trolley.Api.Business;
+﻿using MassTransit;
+using Ryzen.Shop.Infrastructure.MessageBroker;
+using Ryzen.Shop.Trolley.Api.Business;
 using Ryzen.Shop.Trolley.Api.Exceptions;
 using Ryzen.Shop.Trolley.Api.Model;
 
@@ -10,13 +12,16 @@ namespace Ryzen.Shop.Trolley.Api.Services
         private readonly IDiscountEngine _discountEngine;
         private readonly IProductsService _productsService;
         private readonly ITrolleyRepository _trolleyRepository;
-        public TrolleyService(IPromotionsService promotionsService, IDiscountEngine discountEngine, IProductsService productsService, ITrolleyRepository trolleyRepository)
+        private readonly IEventBus _eventBus;
+        public TrolleyService(IPromotionsService promotionsService, IDiscountEngine discountEngine, IProductsService productsService, ITrolleyRepository trolleyRepository, IEventBus bus)
         {
             _promotionsService = promotionsService;
             _discountEngine = discountEngine;
             _productsService = productsService;
             _trolleyRepository = trolleyRepository;
+            _eventBus = bus;
         }
+
 
         public async Task<Model.Trolley> GetTrolley(string trolleyId)
         {
@@ -35,6 +40,15 @@ namespace Ryzen.Shop.Trolley.Api.Services
             return customerTrolley;
 
         }
+
+        public async Task DeleteTrolley(string trolleyId)
+        {
+            var trolley = await _trolleyRepository.GetTrolleyAsync(trolleyId);
+            await _trolleyRepository.DeleteTrolleyAsync(trolleyId);
+            await _eventBus.PublishAsync( trolley.MapToTrolleyDeletedEvent(), CancellationToken.None);
+        }
+
+
         private void EnrichTrolley(Model.Trolley customerTrolley, List<Product> products)
         {
               foreach(var item in customerTrolley.Items)
@@ -50,6 +64,8 @@ namespace Ryzen.Shop.Trolley.Api.Services
                 item.UnitPrice = product.Amount;
             }
         }
+
+
 
       
 

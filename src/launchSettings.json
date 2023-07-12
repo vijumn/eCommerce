@@ -6,8 +6,7 @@
       "serviceActions": {
         "ryzen.shop.catalog.api": "StartDebugging",
         "ryzen.shop.trolley.api": "StartDebugging",
-        "catalog.db": "StartWithoutDebugging",
-        "trolleydata": "StartWithoutDebugging"
+        "catalog.db": "StartWithoutDebugging"
       }
     }
   }

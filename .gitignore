@@ -28,3 +28,7 @@
 /src/.vs/Ryzen.Shop/v17/
 
 
+/src/Shared/Ryzen.Shop.Events/obj/
+/src/.containers/
+/src/Services/Catalog/Ryzen.Shop.Catalog.Test/bin/
+/src/Shared/Ryzen.Shop.Events/bin/
